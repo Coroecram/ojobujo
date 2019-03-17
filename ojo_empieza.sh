@@ -8,7 +8,7 @@ while true; do
 	
         git add .
 	git commit -a -m "Picture taken at $pic_time"
-	git push origin dev
+	git push origin master
         until [ $SECONDS -gt 300 ]; do
 		dummy_variable=true
 	done

@@ -9,6 +9,7 @@ while true; do
         git add .
 	git commit -a -m "Picture taken at $pic_time"
 	git push origin master
+	echo "Git push complete"
         until [ $SECONDS -gt 300 ]; do
 		dummy_variable=true
 	done

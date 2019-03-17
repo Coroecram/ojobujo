@@ -1,14 +1,18 @@
 #title {
-    margin: 3% 30%;
+    margin: 3% 0;
+    width: auto;
     text-align: center;
     font-size: 36px;
     font-family: monospace;
+    font-weight: 700;
 }
 
 #bujo-img {
-  margin: 0 30%;
-  width: 40%;
-  height: 40%;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 640px;
+  height: 480px;
   border-style: solid 2px;
   border-radius: 5px;
 }

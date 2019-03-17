@@ -1,29 +1,19 @@
 import glob
-import camera from PiCamera
-import datetime from datetime
-from string import Template
+from picamera import PiCamera
+import os
+import time
 
 camera = PiCamera()
-camera.vflip = False
+camera.resolution = (640, 480)
+camera.vflip = True
 camera.hflip = False
-img_pattern = 'img/bujo_*_latest.jpg'
-for f in glob.glob(img_pattern):
-    latest_pic = File.open(f, w+)
-    latest_pic.name = latest_pic.name.replace('_latest', '')
-    latest_pic.close()
 
-curr_time = datetime()
+curr_time = int(time.time())
 print(curr_time)
-new_img = 'img/bujo_' + curr_time + '_latest.jpg';
+new_img = 'img/bujo_' + str(curr_time) + '.jpg';
+latest_img = 'img/bujo_' + 'latest.jpg';
 camera.start_preview()
-sleep(5)
+time.sleep(5)
 camera.capture(new_img)
+camera.capture(latest_img)
 camera.stop_preview()
-
-html = File.open('index.html', w+)
-for line in html.readlines():
-    print('html_line ' + line)
-    for old_img in glob.glob(img_pattern):
-        print('old image name ' + old_img)
-        old_img.replace(old_img, new_img)
-html.close()

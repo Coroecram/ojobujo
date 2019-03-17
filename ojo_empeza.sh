@@ -4,7 +4,7 @@ while true; do
 	echo "Taking picture at: $pic_time"
 	SECONDS=0
 	python3 ./ojo_controlador.py
-	until [ $SECONDS -gt 3 ]; do
+	until [ $SECONDS -gt 15 ]; do
 		dummy_variable=true
 	done
         echo "Pushing to git at: $(date '+%D %X')"

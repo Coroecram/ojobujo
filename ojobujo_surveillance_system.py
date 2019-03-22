@@ -8,6 +8,7 @@ import logging
 import socketserver
 from threading import Condition
 from http import server
+from PIL import Image
 
 class StreamingOutput(object):
     def __init__(self):

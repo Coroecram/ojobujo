@@ -8,7 +8,6 @@ import logging
 import socketserver
 from threading import Condition
 from http import server
-from PIL import Image
 
 class StreamingOutput(object):
     def __init__(self):
@@ -48,8 +47,8 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(styles)
         elif self.path == '/assets/ojobujo_icon.png':
-            with Image.open('./assets/ojobujo_icon.png' , "r") as ICON:
-                ICON = ICON.read()
+            with open('./assets/ojobujo_icon.png' , "rb") as ICON:
+                icon = ICON.read()
             ICON.close()
             self.send_response(200)
             self.send_header('Content-Type', 'image/png')

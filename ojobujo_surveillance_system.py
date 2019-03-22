@@ -46,12 +46,12 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.send_header('Content-Length', len(styles))
             self.end_headers()
             self.wfile.write(styles)
-        elif self.path == '/assets/ojobujo_64.ico':
-            with open('./assets/ojobujo_64.ico' , "r") as ICON:
+        elif self.path == '/assets/ojobujo_icon.png':
+            with open('./assets/ojobujo_icon.png' , "r") as ICON:
                 ICON = ICON.read()
             ICON.close()
             self.send_response(200)
-            self.send_header('Content-Type', 'image/x-icon')
+            self.send_header('Content-Type', 'image/png')
             self.send_header('Content-Length', len(icon))
             self.end_headers()
             self.wfile.write(icon)

@@ -47,7 +47,7 @@ class StreamingHandler(server.BaseHTTPRequestHandler):
             self.end_headers()
             self.wfile.write(styles)
         elif self.path == '/assets/ojobujo_icon.png':
-            with open('./assets/ojobujo_icon.png' , "r") as ICON:
+            with Image.open('./assets/ojobujo_icon.png' , "r") as ICON:
                 ICON = ICON.read()
             ICON.close()
             self.send_response(200)

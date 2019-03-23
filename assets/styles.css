@@ -12,9 +12,9 @@
   margin-left: auto;
   margin-right: auto;
   width: 640px;
-  height: 480px;
+  height: 640px;
   border-style: solid 2px;
-  border-radius: 5px;
+  border-radius: 500px;
 }
 
 html, body, header, nav, h1, a,
